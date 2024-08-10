@@ -73,11 +73,6 @@ if uploaded_file is not None:
             sns.pairplot(df)
             st.pyplot(plt)
 
-        if st.button("Generate Pair Plots with Hue"):
-            target_column = st.selectbox("Select the target column for hue", df.columns)
-            if target_column:
-                sns.pairplot(df, hue=target_column)
-                st.pyplot(plt)
         
         if st.button("Generate Correlation Heatmap"):
             # Select only numeric columns for correlation
