@@ -100,11 +100,6 @@ if uploaded_file is not None:
                 st.write(f"Value counts for {column}:")
                 st.write(df[column].value_counts())
         
-        if st.button("Generate Distribution Plots"):
-            numeric_columns = df.select_dtypes(include([np.number])).columns
-            for column in numeric_columns:
-                sns.distplot(df[column])
-                st.pyplot(plt)
         
         if st.button("Generate Scatter Matrix"):
             pd.plotting.scatter_matrix(df, figsize=(12, 8))
